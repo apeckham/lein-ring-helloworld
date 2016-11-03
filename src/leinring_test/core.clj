@@ -1,6 +1,7 @@
 (ns leinring-test.core
   (:require [hiccup.core :refer :all]
             [hiccup.page :refer :all]
+            [clojure.edn]
             [ring.middleware.resource :refer :all]
             [ring.middleware.content-type :refer :all]
             [ring.middleware.not-modified :refer :all])
@@ -11,7 +12,7 @@
    :headers {"Content-Type" "text/html"}
    :body (html5
           [:head (include-css "/app.css")]
-          [:h1 "Hello world" [:h2 "from leinring-test.core!"]])})
+          (clojure.edn/read-string (slurp "resources/html.edn")))})
 
 (def handler
   (-> hello-world
