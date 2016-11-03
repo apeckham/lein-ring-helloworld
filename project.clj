@@ -7,6 +7,7 @@
                  [hiccup "1.0.5"]]
   :main ^:skip-aot leinring-test.core
   :target-path "target/%s"
-  :ring {:handler leinring-test.core/handler}
+  :ring {:handler leinring-test.core/handler
+         :auto-refresh? true}
   :plugins [[lein-ring "0.9.7"]]
   :profiles {:uberjar {:aot :all}})

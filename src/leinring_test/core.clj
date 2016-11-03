@@ -6,4 +6,6 @@
 (defn handler [request]
   {:status 200
    :headers {"Content-Type" "text/html"}
-   :body (html5 [:h1 "Hello world" [:h2 "from leinring-test.core"]])})
+   :body (html5
+            [:head]
+            [:h1 "Hello world" [:h2 "from leinring-test.core!"]])})
